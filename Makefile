@@ -29,7 +29,7 @@ lint:
 	staticcheck $(go list ./... | grep -v ent/privacy)
 
 build:
-	go build -ldflags $(LDFLAGS) -o gobench ./
+	GOARCH=linux/arm64/v8 go build -ldflags $(LDFLAGS) -o gobench ./
 
 test:
 	./scripts/cov.sh
